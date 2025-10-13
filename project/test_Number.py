@@ -106,3 +106,63 @@ class TestAdd_sixty(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestCalculate(unittest.TestCase):
+    def test_calculate_valid_input_addition():
+        result = Number.calculate(5, 3, "add")
+        assert result == 8
+    def test_calculate_valid_input_subtraction():
+        result = Number.calculate(10, 4, "subtract")
+        assert result == 6
+    def test_calculate_valid_input_multiplication():
+        result = Number.calculate(7, 6, "multiply")
+        assert result == 42
+    def test_calculate_valid_input_division():
+        result = Number.calculate(20, 4, "divide")
+        assert result == 5.0
+    def test_calculate_division_by_zero():
+        try:
+            Number.calculate(10, 0, "divide")
+            assert False, "Expected an exception for division by zero"
+        except ZeroDivisionError:
+            pass
+    def test_calculate_invalid_operation():
+        try:
+            Number.calculate(5, 3, "modulus")
+            assert False, "Expected an exception for invalid operation"
+        except ValueError:
+            pass
+    def test_calculate_non_numeric_first_argument():
+        try:
+            Number.calculate("five", 3, "add")
+            assert False, "Expected an exception for non-numeric first argument"
+        except TypeError:
+            pass
+    def test_calculate_non_numeric_second_argument():
+        try:
+            Number.calculate(5, "three", "add")
+            assert False, "Expected an exception for non-numeric second argument"
+        except TypeError:
+            pass
+    def test_calculate_missing_operation_argument():
+        try:
+            Number.calculate(5, 3, None)
+            assert False, "Expected an exception for missing operation argument"
+        except ValueError:
+            pass
+    def test_calculate_missing_first_argument():
+        try:
+            Number.calculate(None, 3, "add")
+            assert False, "Expected an exception for missing first argument"
+        except TypeError:
+            pass
+    def test_calculate_missing_second_argument():
+        try:
+            Number.calculate(5, None, "add")
+            assert False, "Expected an exception for missing second argument"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()

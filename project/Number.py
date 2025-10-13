@@ -15,3 +15,7 @@ def subtract_numbers(a, b):
 
 def add_sixty(num):
     return num + 60
+
+
+def calculate(num):
+    return (num - 50) * 10
