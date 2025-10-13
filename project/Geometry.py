@@ -19,3 +19,7 @@ def triangle_area(base, height):
 
 def trapezoid_area(base1, base2, height):
     return ((base1 + base2) * height) / 2
+
+
+def calculate_circumference(radius):
+    return 2 * 3.141592653589793 * radius

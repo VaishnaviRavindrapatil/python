@@ -61,3 +61,39 @@ class TestGeneratedFunction(unittest.TestCase):
             trapezoid_area(5, 7, "height")
         with self.assertRaises(TypeError):
             trapezoid_area(5, 7)
+
+
+class TestCalculate_circumference(unittest.TestCase):
+    def test_calculate_circumference_valid_radius():
+        result = Geometry.calculate_circumference(5)
+        assert result == 31.41592653589793  # Assuming π = 3.141592653589793
+    def test_calculate_circumference_zero_radius():
+        result = Geometry.calculate_circumference(0)
+        assert result == 0
+    def test_calculate_circumference_negative_radius():
+        try:
+            Geometry.calculate_circumference(-5)
+            assert False, "Expected ValueError for negative radius"
+        except ValueError:
+            pass
+    def test_calculate_circumference_non_numeric_radius_string():
+        try:
+            Geometry.calculate_circumference("abc")
+            assert False, "Expected TypeError for non-numeric radius"
+        except TypeError:
+            pass
+    def test_calculate_circumference_non_numeric_radius_none():
+        try:
+            Geometry.calculate_circumference(None)
+            assert False, "Expected TypeError for None as radius"
+        except TypeError:
+            pass
+    def test_calculate_circumference_large_radius():
+        result = Geometry.calculate_circumference(1e6)
+        assert result == 6283185.307179586  # Assuming π = 3.141592653589793
+    def test_calculate_circumference_float_radius():
+        result = Geometry.calculate_circumference(2.5)
+        assert result == 15.707963267948966  # Assuming π = 3.141592653589793
+
+if __name__ == '__main__':
+    unittest.main()
