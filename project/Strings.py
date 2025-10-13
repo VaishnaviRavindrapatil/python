@@ -12,3 +12,7 @@ def contains_only_digits(s):
 
 def is_palindrome(s):
     return s == s[::-1]
+
+
+def to_uppercase(s: str) -> str:
+    return s.upper()
