@@ -400,3 +400,51 @@ class TestAdd_800(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_900(unittest.TestCase):
+    def test_add_900_with_positive_integer():
+        result = Number.add_900(100)
+        assert result == 1000
+    def test_add_900_with_negative_integer():
+        result = Number.add_900(-100)
+        assert result == 800
+    def test_add_900_with_zero():
+        result = Number.add_900(0)
+        assert result == 900
+    def test_add_900_with_large_integer():
+        result = Number.add_900(1000000)
+        assert result == 1000900
+    def test_add_900_with_float_input():
+        result = Number.add_900(100.5)
+        assert result == 1000.5
+    def test_add_900_with_negative_float_input():
+        result = Number.add_900(-100.75)
+        assert result == 799.25
+    def test_add_900_with_string_input():
+        try:
+            Number.add_900("100")
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_none_input():
+        try:
+            Number.add_900(None)
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_list_input():
+        try:
+            Number.add_900([100])
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_dict_input():
+        try:
+            Number.add_900({"value": 100})
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()

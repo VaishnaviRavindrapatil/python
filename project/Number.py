@@ -39,3 +39,7 @@ def add_800(number):
 
 def add_800(number):
     return number + 800
+
+
+def add_900(number):
+    return number + 900
