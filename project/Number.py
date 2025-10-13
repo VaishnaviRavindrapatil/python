@@ -19,3 +19,15 @@ def add_sixty(num):
 
 def calculate(num):
     return (num - 50) * 10
+
+
+def add_seventy(num):
+    return num + 70
+
+
+def add_seventy(number):
+    return number + 70
+
+
+def add_seventy(number):
+    return number + 70

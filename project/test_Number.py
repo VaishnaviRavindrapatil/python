@@ -166,3 +166,138 @@ class TestCalculate(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_seventy(unittest.TestCase):
+    def test_add_seventy_valid_input():
+        result = Number.add_seventy(30)
+        assert result == 100, f"Expected 100, but got {result}"
+    def test_add_seventy_negative_input():
+        result = Number.add_seventy(-20)
+        assert result == 50, f"Expected 50, but got {result}"
+    def test_add_seventy_zero():
+        result = Number.add_seventy(0)
+        assert result == 70, f"Expected 70, but got {result}"
+    def test_add_seventy_large_number():
+        result = Number.add_seventy(1000)
+        assert result == 1070, f"Expected 1070, but got {result}"
+    def test_add_seventy_float_input():
+        result = Number.add_seventy(25.5)
+        assert result == 95.5, f"Expected 95.5, but got {result}"
+    def test_add_seventy_string_input():
+        try:
+            Number.add_seventy("30")
+            assert False, "Expected a TypeError for string input, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_list_input():
+        try:
+            Number.add_seventy([30])
+            assert False, "Expected a TypeError for list input, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_none_input():
+        try:
+            Number.add_seventy(None)
+            assert False, "Expected a TypeError for None input, but no exception was raised"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_seventy(unittest.TestCase):
+    def test_add_seventy_with_positive_number(self):
+        result = Number.add_seventy(30)
+        self.assertEqual(result, 100)
+    def test_add_seventy_with_zero(self):
+        result = Number.add_seventy(0)
+        self.assertEqual(result, 70)
+    def test_add_seventy_with_negative_number(self):
+        result = Number.add_seventy(-30)
+        self.assertEqual(result, 40)
+    def test_add_seventy_with_large_number(self):
+        result = Number.add_seventy(1000)
+        self.assertEqual(result, 1070)
+    def test_add_seventy_with_float_input(self):
+        result = Number.add_seventy(25.5)
+        self.assertEqual(result, 95.5)
+    def test_add_seventy_with_string_input(self):
+        with self.assertRaises(TypeError):
+            Number.add_seventy("30")
+    def test_add_seventy_with_none_input(self):
+        with self.assertRaises(TypeError):
+            Number.add_seventy(None)
+    def test_add_seventy_with_list_input(self):
+        with self.assertRaises(TypeError):
+            Number.add_seventy([30])
+    def test_add_seventy_with_dict_input(self):
+        with self.assertRaises(TypeError):
+            Number.add_seventy({"number": 30})
+    def test_add_seventy_with_boolean_input(self):
+        with self.assertRaises(TypeError):
+            Number.add_seventy(True)
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_seventy(unittest.TestCase):
+    def test_add_seventy_with_positive_integer():
+        result = Number.add_seventy(30)
+        assert result == 100, f"Expected 100, but got {result}"
+    def test_add_seventy_with_negative_integer():
+        result = Number.add_seventy(-50)
+        assert result == 20, f"Expected 20, but got {result}"
+    def test_add_seventy_with_zero():
+        result = Number.add_seventy(0)
+        assert result == 70, f"Expected 70, but got {result}"
+    def test_add_seventy_with_large_integer():
+        result = Number.add_seventy(1000)
+        assert result == 1070, f"Expected 1070, but got {result}"
+    def test_add_seventy_with_float_input():
+        result = Number.add_seventy(25.5)
+        assert result == 95.5, f"Expected 95.5, but got {result}"
+    def test_add_seventy_with_negative_float():
+        result = Number.add_seventy(-20.5)
+        assert result == 49.5, f"Expected 49.5, but got {result}"
+    def test_add_seventy_with_string_input():
+        try:
+            Number.add_seventy("30")
+            assert False, "Expected a TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_with_none_input():
+        try:
+            Number.add_seventy(None)
+            assert False, "Expected a TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_with_list_input():
+        try:
+            Number.add_seventy([30])
+            assert False, "Expected a TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_with_dict_input():
+        try:
+            Number.add_seventy({"value": 30})
+            assert False, "Expected a TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_seventy_with_boolean_true():
+        result = Number.add_seventy(True)
+        assert result == 71, f"Expected 71, but got {result}"
+    def test_add_seventy_with_boolean_false():
+        result = Number.add_seventy(False)
+        assert result == 70, f"Expected 70, but got {result}"
+    def test_add_seventy_with_complex_number():
+        try:
+            Number.add_seventy(5 + 3j)
+            assert False, "Expected a TypeError, but no exception was raised"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
