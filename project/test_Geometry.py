@@ -161,3 +161,30 @@ class TestHalf_circle_circumference(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestCalculate_square_area_and_perimeter(unittest.TestCase):
+    def test_calculate_square_area_and_perimeter_valid_side_length():
+        result = Geometry.calculate_square_area_and_perimeter(4)
+        assert result == (16, 16)
+    def test_calculate_square_area_and_perimeter_side_length_zero():
+        result = Geometry.calculate_square_area_and_perimeter(0)
+        assert result == (0, 0)
+    def test_calculate_square_area_and_perimeter_negative_side_length():
+        try:
+            Geometry.calculate_square_area_and_perimeter(-5)
+            assert False, "Expected ValueError for negative side length"
+        except ValueError as e:
+            assert str(e) == "Side length must be non-negative"
+    def test_calculate_square_area_and_perimeter_non_numeric_side_length():
+        try:
+            Geometry.calculate_square_area_and_perimeter("abc")
+            assert False, "Expected TypeError for non-numeric side length"
+        except TypeError as e:
+            assert str(e) == "Side length must be a number"
+    def test_calculate_square_area_and_perimeter_large_side_length():
+        result = Geometry.calculate_square_area_and_perimeter(1_000_000)
+        assert result == (1_000_000_000_000, 4_000_000)
+
+if __name__ == '__main__':
+    unittest.main()

@@ -31,3 +31,9 @@ def half_circle_circumference(radius):
 
 def half_circle_circumference(radius):
     return (2 * 3.141592653589793 * radius) / 2
+
+
+def calculate_square_area_and_perimeter(side_length):
+    area = side_length ** 2
+    perimeter = 4 * side_length
+    return area, perimeter
