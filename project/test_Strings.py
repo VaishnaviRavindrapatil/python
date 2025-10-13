@@ -63,3 +63,45 @@ class TestGeneratedFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTo_uppercase(unittest.TestCase):
+    def test_to_uppercase_valid_string():
+        result = Strings.to_uppercase("hello")
+        assert result == "HELLO"
+    def test_to_uppercase_empty_string():
+        result = Strings.to_uppercase("")
+        assert result == ""
+    def test_to_uppercase_already_uppercase():
+        result = Strings.to_uppercase("WORLD")
+        assert result == "WORLD"
+    def test_to_uppercase_mixed_case():
+        result = Strings.to_uppercase("HeLLo WoRLD")
+        assert result == "HELLO WORLD"
+    def test_to_uppercase_numbers_and_symbols():
+        result = Strings.to_uppercase("123!@#")
+        assert result == "123!@#"
+    def test_to_uppercase_non_string_input_int():
+        try:
+            Strings.to_uppercase(123)
+            assert False, "Expected TypeError for non-string input"
+        except TypeError:
+            pass
+    def test_to_uppercase_non_string_input_list():
+        try:
+            Strings.to_uppercase(["hello", "world"])
+            assert False, "Expected TypeError for non-string input"
+        except TypeError:
+            pass
+    def test_to_uppercase_unicode_characters():
+        result = Strings.to_uppercase("héllo")
+        assert result == "HÉLLO"
+    def test_to_uppercase_whitespace_only():
+        result = Strings.to_uppercase("   ")
+        assert result == "   "
+    def test_to_uppercase_with_newline():
+        result = Strings.to_uppercase("hello\nworld")
+        assert result == "HELLO\nWORLD"
+
+if __name__ == '__main__':
+    unittest.main()
