@@ -188,3 +188,67 @@ class TestCalculate_square_area_and_perimeter(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestCalculate_perimeter(unittest.TestCase):
+    def test_calculate_perimeter_valid_rectangle():
+        result = calculate_perimeter("rectangle", length=5, width=3)
+        assert result == 16, f"Expected 16, got {result}"
+    def test_calculate_perimeter_valid_square():
+        result = calculate_perimeter("square", side=4)
+        assert result == 16, f"Expected 16, got {result}"
+    def test_calculate_perimeter_valid_triangle():
+        result = calculate_perimeter("triangle", side1=3, side2=4, side3=5)
+        assert result == 12, f"Expected 12, got {result}"
+    def test_calculate_perimeter_invalid_shape_type():
+        try:
+            calculate_perimeter("circle", radius=7)
+        except ValueError as e:
+            assert str(e) == "Unsupported shape type", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected ValueError for unsupported shape type"
+    def test_calculate_perimeter_missing_arguments_rectangle():
+        try:
+            calculate_perimeter("rectangle", length=5)
+        except TypeError as e:
+            assert str(e) == "Missing required arguments for rectangle", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected TypeError for missing arguments"
+    def test_calculate_perimeter_missing_arguments_square():
+        try:
+            calculate_perimeter("square")
+        except TypeError as e:
+            assert str(e) == "Missing required arguments for square", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected TypeError for missing arguments"
+    def test_calculate_perimeter_missing_arguments_triangle():
+        try:
+            calculate_perimeter("triangle", side1=3, side2=4)
+        except TypeError as e:
+            assert str(e) == "Missing required arguments for triangle", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected TypeError for missing arguments"
+    def test_calculate_perimeter_negative_values():
+        try:
+            calculate_perimeter("rectangle", length=-5, width=3)
+        except ValueError as e:
+            assert str(e) == "Length and width must be positive values", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected ValueError for negative values"
+    def test_calculate_perimeter_non_numeric_values():
+        try:
+            calculate_perimeter("square", side="four")
+        except TypeError as e:
+            assert str(e) == "Side must be a numeric value", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected TypeError for non-numeric values"
+    def test_calculate_perimeter_zero_values():
+        try:
+            calculate_perimeter("triangle", side1=0, side2=4, side3=5)
+        except ValueError as e:
+            assert str(e) == "Side lengths must be greater than zero", f"Unexpected error message: {str(e)}"
+        else:
+            assert False, "Expected ValueError for zero values"
+
+if __name__ == '__main__':
+    unittest.main()

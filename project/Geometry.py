@@ -37,3 +37,7 @@ def calculate_square_area_and_perimeter(side_length):
     area = side_length ** 2
     perimeter = 4 * side_length
     return area, perimeter
+
+
+def calculate_perimeter(length, width):
+    return 2 * (length + width)
