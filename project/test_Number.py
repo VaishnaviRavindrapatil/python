@@ -301,3 +301,102 @@ class TestAdd_seventy(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_800(unittest.TestCase):
+    def test_add_800_valid_integer_input():
+        result = Number.add_800(200)
+        assert result == 1000, "Expected 1000 when input is 200"
+    def test_add_800_valid_negative_integer_input():
+        result = Number.add_800(-1000)
+        assert result == -200, "Expected -200 when input is -1000"
+    def test_add_800_valid_zero_input():
+        result = Number.add_800(0)
+        assert result == 800, "Expected 800 when input is 0"
+    def test_add_800_valid_float_input():
+        result = Number.add_800(199.5)
+        assert result == 999.5, "Expected 999.5 when input is 199.5"
+    def test_add_800_large_number_input():
+        result = Number.add_800(10**6)
+        assert result == 1000800, "Expected 1000800 when input is 10^6"
+    def test_add_800_invalid_string_input():
+        try:
+            Number.add_800("200")
+            assert False, "Expected a TypeError when input is a string"
+        except TypeError:
+            pass
+    def test_add_800_invalid_list_input():
+        try:
+            Number.add_800([200])
+            assert False, "Expected a TypeError when input is a list"
+        except TypeError:
+            pass
+    def test_add_800_invalid_none_input():
+        try:
+            Number.add_800(None)
+            assert False, "Expected a TypeError when input is None"
+        except TypeError:
+            pass
+    def test_add_800_invalid_boolean_input():
+        try:
+            Number.add_800(True)
+            assert False, "Expected a TypeError when input is a boolean"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_800(unittest.TestCase):
+    def test_add_800_with_valid_integer():
+        result = Number.add_800(200)
+        assert result == 1000
+    def test_add_800_with_valid_negative_integer():
+        result = Number.add_800(-300)
+        assert result == 500
+    def test_add_800_with_valid_zero():
+        result = Number.add_800(0)
+        assert result == 800
+    def test_add_800_with_large_integer():
+        result = Number.add_800(1000000)
+        assert result == 1000800
+    def test_add_800_with_float():
+        result = Number.add_800(200.5)
+        assert result == 1000.5
+    def test_add_800_with_negative_float():
+        result = Number.add_800(-300.75)
+        assert result == 499.25
+    def test_add_800_with_string_input():
+        try:
+            Number.add_800("200")
+            assert False, "Expected a TypeError for string input"
+        except TypeError:
+            pass
+    def test_add_800_with_none_input():
+        try:
+            Number.add_800(None)
+            assert False, "Expected a TypeError for None input"
+        except TypeError:
+            pass
+    def test_add_800_with_list_input():
+        try:
+            Number.add_800([200])
+            assert False, "Expected a TypeError for list input"
+        except TypeError:
+            pass
+    def test_add_800_with_dict_input():
+        try:
+            Number.add_800({"value": 200})
+            assert False, "Expected a TypeError for dict input"
+        except TypeError:
+            pass
+    def test_add_800_with_boolean_true():
+        result = Number.add_800(True)
+        assert result == 801  # True is treated as 1 in numeric operations
+    def test_add_800_with_boolean_false():
+        result = Number.add_800(False)
+        assert result == 800  # False is treated as 0 in numeric operations
+
+if __name__ == '__main__':
+    unittest.main()
