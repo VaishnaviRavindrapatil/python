@@ -97,3 +97,67 @@ class TestCalculate_circumference(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestHalf_circle_circumference(unittest.TestCase):
+    def test_half_circle_circumference_valid_radius():
+        result = Geometry.half_circle_circumference(10)
+        expected = 10 * 3.14159 + 20  # πr + 2r
+        assert result == expected
+    def test_half_circle_circumference_zero_radius():
+        result = Geometry.half_circle_circumference(0)
+        expected = 0  # πr + 2r where r=0
+        assert result == expected
+    def test_half_circle_circumference_negative_radius():
+        try:
+            Geometry.half_circle_circumference(-5)
+            assert False, "Expected ValueError for negative radius"
+        except ValueError:
+            pass
+    def test_half_circle_circumference_non_numeric_radius():
+        try:
+            Geometry.half_circle_circumference("ten")
+            assert False, "Expected TypeError for non-numeric radius"
+        except TypeError:
+            pass
+    def test_half_circle_circumference_large_radius():
+        result = Geometry.half_circle_circumference(1e6)
+        expected = 1e6 * 3.14159 + 2 * 1e6  # πr + 2r
+        assert result == expected
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestHalf_circle_circumference(unittest.TestCase):
+    def test_half_circle_circumference_valid_radius():
+        result = Geometry.half_circle_circumference(10)
+        expected = 10 * 3.141592653589793 + 20  # π * r + 2r
+        assert result == expected
+    def test_half_circle_circumference_zero_radius():
+        result = Geometry.half_circle_circumference(0)
+        expected = 0
+        assert result == expected
+    def test_half_circle_circumference_negative_radius():
+        try:
+            Geometry.half_circle_circumference(-5)
+            assert False, "Expected ValueError for negative radius"
+        except ValueError:
+            pass
+    def test_half_circle_circumference_non_numeric_radius():
+        try:
+            Geometry.half_circle_circumference("ten")
+            assert False, "Expected TypeError for non-numeric radius"
+        except TypeError:
+            pass
+    def test_half_circle_circumference_large_radius():
+        result = Geometry.half_circle_circumference(1e6)
+        expected = 1e6 * 3.141592653589793 + 2 * 1e6  # π * r + 2r
+        assert result == expected
+    def test_half_circle_circumference_float_radius():
+        result = Geometry.half_circle_circumference(7.5)
+        expected = 7.5 * 3.141592653589793 + 15  # π * r + 2r
+        assert result == expected
+
+if __name__ == '__main__':
+    unittest.main()

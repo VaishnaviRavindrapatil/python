@@ -23,3 +23,11 @@ def trapezoid_area(base1, base2, height):
 
 def calculate_circumference(radius):
     return 2 * 3.141592653589793 * radius
+
+
+def half_circle_circumference(radius):
+    return (2 * 3.141592653589793 * radius) / 2
+
+
+def half_circle_circumference(radius):
+    return (2 * 3.141592653589793 * radius) / 2
