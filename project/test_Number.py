@@ -448,3 +448,48 @@ class TestAdd_900(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_ninety(unittest.TestCase):
+    def test_add_ninety_with_positive_integer():
+        result = Number.add_ninety(10)
+        assert result == 100
+    def test_add_ninety_with_negative_integer():
+        result = Number.add_ninety(-50)
+        assert result == 40
+    def test_add_ninety_with_zero():
+        result = Number.add_ninety(0)
+        assert result == 90
+    def test_add_ninety_with_large_integer():
+        result = Number.add_ninety(1000000)
+        assert result == 1000090
+    def test_add_ninety_with_float():
+        result = Number.add_ninety(10.5)
+        assert result == 100.5
+    def test_add_ninety_with_negative_float():
+        result = Number.add_ninety(-89.5)
+        assert result == 0.5
+    def test_add_ninety_with_string_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety("string")
+    def test_add_ninety_with_none_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety(None)
+    def test_add_ninety_with_boolean_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety(True)
+    def test_add_ninety_with_list_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety([1, 2, 3])
+    def test_add_ninety_with_dict_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety({"key": "value"})
+    def test_add_ninety_with_tuple_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety((1, 2, 3))
+    def test_add_ninety_with_complex_number():
+        with pytest.raises(TypeError):
+            Number.add_ninety(3 + 4j)
+
+if __name__ == '__main__':
+    unittest.main()

@@ -43,3 +43,7 @@ def add_800(number):
 
 def add_900(number):
     return number + 900
+
+
+def add_ninety(number):
+    return number + 90
