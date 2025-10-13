@@ -61,3 +61,48 @@ class TestGeneratedFunction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestAdd_sixty(unittest.TestCase):
+    def test_add_sixty_with_valid_integer_input():
+        result = Number.add_sixty(40)
+        assert result == 100
+    def test_add_sixty_with_zero():
+        result = Number.add_sixty(0)
+        assert result == 60
+    def test_add_sixty_with_negative_integer():
+        result = Number.add_sixty(-20)
+        assert result == 40
+    def test_add_sixty_with_large_integer():
+        result = Number.add_sixty(1000000)
+        assert result == 1000060
+    def test_add_sixty_with_valid_float_input():
+        result = Number.add_sixty(40.5)
+        assert result == 100.5
+    def test_add_sixty_with_negative_float():
+        result = Number.add_sixty(-20.5)
+        assert result == 39.5
+    def test_add_sixty_with_string_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty("40")
+    def test_add_sixty_with_none_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty(None)
+    def test_add_sixty_with_boolean_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty(True)
+    def test_add_sixty_with_list_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty([40])
+    def test_add_sixty_with_dict_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty({"number": 40})
+    def test_add_sixty_with_tuple_input():
+        with pytest.raises(TypeError):
+            Number.add_sixty((40,))
+    def test_add_sixty_with_complex_number():
+        with pytest.raises(TypeError):
+            Number.add_sixty(40 + 5j)
+
+if __name__ == '__main__':
+    unittest.main()
