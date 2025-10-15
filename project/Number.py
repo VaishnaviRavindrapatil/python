@@ -47,3 +47,11 @@ def add_900(number):
 
 def add_ninety(number):
     return number + 90
+
+
+def add_ten(number):
+    return number + 10
+
+
+def add_ten(number):
+    return number + 10

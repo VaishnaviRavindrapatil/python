@@ -493,3 +493,99 @@ class TestAdd_ninety(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_ten(unittest.TestCase):
+    def test_add_ten_with_positive_integer(self):
+        result = Number.add_ten(5)
+        self.assertEqual(result, 15)
+    def test_add_ten_with_negative_integer(self):
+        result = Number.add_ten(-20)
+        self.assertEqual(result, -10)
+    def test_add_ten_with_zero(self):
+        result = Number.add_ten(0)
+        self.assertEqual(result, 10)
+    def test_add_ten_with_positive_float(self):
+        result = Number.add_ten(5.5)
+        self.assertEqual(result, 15.5)
+    def test_add_ten_with_negative_float(self):
+        result = Number.add_ten(-3.7)
+        self.assertEqual(result, 6.3)
+    def test_add_ten_with_large_number(self):
+        result = Number.add_ten(1_000_000)
+        self.assertEqual(result, 1_000_010)
+    def test_add_ten_with_non_numeric_string(self):
+        with self.assertRaises(TypeError):
+            Number.add_ten("abc")
+    def test_add_ten_with_numeric_string(self):
+        with self.assertRaises(TypeError):
+            Number.add_ten("10")
+    def test_add_ten_with_none(self):
+        with self.assertRaises(TypeError):
+            Number.add_ten(None)
+    def test_add_ten_with_list(self):
+        with self.assertRaises(TypeError):
+            Number.add_ten([10, 20])
+    def test_add_ten_with_dict(self):
+        with self.assertRaises(TypeError):
+            Number.add_ten({"key": 10})
+    def test_add_ten_with_boolean(self):
+        result = Number.add_ten(True)
+        self.assertEqual(result, 11)
+    def test_add_ten_with_boolean_false(self):
+        result = Number.add_ten(False)
+        self.assertEqual(result, 10)
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_ten(unittest.TestCase):
+    def test_add_ten_with_positive_integer():
+        result = Number.add_ten(5)
+        assert result == 15, f"Expected 15, got {result}"
+    def test_add_ten_with_negative_integer():
+        result = Number.add_ten(-5)
+        assert result == 5, f"Expected 5, got {result}"
+    def test_add_ten_with_zero():
+        result = Number.add_ten(0)
+        assert result == 10, f"Expected 10, got {result}"
+    def test_add_ten_with_large_integer():
+        result = Number.add_ten(1000000)
+        assert result == 1000010, f"Expected 1000010, got {result}"
+    def test_add_ten_with_float():
+        result = Number.add_ten(5.5)
+        assert result == 15.5, f"Expected 15.5, got {result}"
+    def test_add_ten_with_negative_float():
+        result = Number.add_ten(-5.5)
+        assert result == 4.5, f"Expected 4.5, got {result}"
+    def test_add_ten_with_zero_float():
+        result = Number.add_ten(0.0)
+        assert result == 10.0, f"Expected 10.0, got {result}"
+    def test_add_ten_with_string_input():
+        try:
+            Number.add_ten("5")
+            assert False, "Expected TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_ten_with_none_input():
+        try:
+            Number.add_ten(None)
+            assert False, "Expected TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_ten_with_list_input():
+        try:
+            Number.add_ten([5])
+            assert False, "Expected TypeError, but no exception was raised"
+        except TypeError:
+            pass
+    def test_add_ten_with_dict_input():
+        try:
+            Number.add_ten({"value": 5})
+            assert False, "Expected TypeError, but no exception was raised"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
