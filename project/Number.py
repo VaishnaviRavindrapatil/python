@@ -31,3 +31,19 @@ def add_seventy(number):
 
 def add_seventy(number):
     return number + 70
+
+
+def add_800(number):
+    return number + 800
+
+
+def add_800(number):
+    return number + 800
+
+
+def add_900(number):
+    return number + 900
+
+
+def add_ninety(number):
+    return number + 90

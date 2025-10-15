@@ -301,3 +301,195 @@ class TestAdd_seventy(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestAdd_800(unittest.TestCase):
+    def test_add_800_valid_integer_input():
+        result = Number.add_800(200)
+        assert result == 1000, "Expected 1000 when input is 200"
+    def test_add_800_valid_negative_integer_input():
+        result = Number.add_800(-1000)
+        assert result == -200, "Expected -200 when input is -1000"
+    def test_add_800_valid_zero_input():
+        result = Number.add_800(0)
+        assert result == 800, "Expected 800 when input is 0"
+    def test_add_800_valid_float_input():
+        result = Number.add_800(199.5)
+        assert result == 999.5, "Expected 999.5 when input is 199.5"
+    def test_add_800_large_number_input():
+        result = Number.add_800(10**6)
+        assert result == 1000800, "Expected 1000800 when input is 10^6"
+    def test_add_800_invalid_string_input():
+        try:
+            Number.add_800("200")
+            assert False, "Expected a TypeError when input is a string"
+        except TypeError:
+            pass
+    def test_add_800_invalid_list_input():
+        try:
+            Number.add_800([200])
+            assert False, "Expected a TypeError when input is a list"
+        except TypeError:
+            pass
+    def test_add_800_invalid_none_input():
+        try:
+            Number.add_800(None)
+            assert False, "Expected a TypeError when input is None"
+        except TypeError:
+            pass
+    def test_add_800_invalid_boolean_input():
+        try:
+            Number.add_800(True)
+            assert False, "Expected a TypeError when input is a boolean"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_800(unittest.TestCase):
+    def test_add_800_with_valid_integer():
+        result = Number.add_800(200)
+        assert result == 1000
+    def test_add_800_with_valid_negative_integer():
+        result = Number.add_800(-300)
+        assert result == 500
+    def test_add_800_with_valid_zero():
+        result = Number.add_800(0)
+        assert result == 800
+    def test_add_800_with_large_integer():
+        result = Number.add_800(1000000)
+        assert result == 1000800
+    def test_add_800_with_float():
+        result = Number.add_800(200.5)
+        assert result == 1000.5
+    def test_add_800_with_negative_float():
+        result = Number.add_800(-300.75)
+        assert result == 499.25
+    def test_add_800_with_string_input():
+        try:
+            Number.add_800("200")
+            assert False, "Expected a TypeError for string input"
+        except TypeError:
+            pass
+    def test_add_800_with_none_input():
+        try:
+            Number.add_800(None)
+            assert False, "Expected a TypeError for None input"
+        except TypeError:
+            pass
+    def test_add_800_with_list_input():
+        try:
+            Number.add_800([200])
+            assert False, "Expected a TypeError for list input"
+        except TypeError:
+            pass
+    def test_add_800_with_dict_input():
+        try:
+            Number.add_800({"value": 200})
+            assert False, "Expected a TypeError for dict input"
+        except TypeError:
+            pass
+    def test_add_800_with_boolean_true():
+        result = Number.add_800(True)
+        assert result == 801  # True is treated as 1 in numeric operations
+    def test_add_800_with_boolean_false():
+        result = Number.add_800(False)
+        assert result == 800  # False is treated as 0 in numeric operations
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_900(unittest.TestCase):
+    def test_add_900_with_positive_integer():
+        result = Number.add_900(100)
+        assert result == 1000
+    def test_add_900_with_negative_integer():
+        result = Number.add_900(-100)
+        assert result == 800
+    def test_add_900_with_zero():
+        result = Number.add_900(0)
+        assert result == 900
+    def test_add_900_with_large_integer():
+        result = Number.add_900(1000000)
+        assert result == 1000900
+    def test_add_900_with_float_input():
+        result = Number.add_900(100.5)
+        assert result == 1000.5
+    def test_add_900_with_negative_float_input():
+        result = Number.add_900(-100.75)
+        assert result == 799.25
+    def test_add_900_with_string_input():
+        try:
+            Number.add_900("100")
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_none_input():
+        try:
+            Number.add_900(None)
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_list_input():
+        try:
+            Number.add_900([100])
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+    def test_add_900_with_dict_input():
+        try:
+            Number.add_900({"value": 100})
+            assert False, "Expected TypeError"
+        except TypeError:
+            pass
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+class TestAdd_ninety(unittest.TestCase):
+    def test_add_ninety_with_positive_integer():
+        result = Number.add_ninety(10)
+        assert result == 100
+    def test_add_ninety_with_negative_integer():
+        result = Number.add_ninety(-50)
+        assert result == 40
+    def test_add_ninety_with_zero():
+        result = Number.add_ninety(0)
+        assert result == 90
+    def test_add_ninety_with_large_integer():
+        result = Number.add_ninety(1000000)
+        assert result == 1000090
+    def test_add_ninety_with_float():
+        result = Number.add_ninety(10.5)
+        assert result == 100.5
+    def test_add_ninety_with_negative_float():
+        result = Number.add_ninety(-89.5)
+        assert result == 0.5
+    def test_add_ninety_with_string_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety("string")
+    def test_add_ninety_with_none_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety(None)
+    def test_add_ninety_with_boolean_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety(True)
+    def test_add_ninety_with_list_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety([1, 2, 3])
+    def test_add_ninety_with_dict_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety({"key": "value"})
+    def test_add_ninety_with_tuple_input():
+        with pytest.raises(TypeError):
+            Number.add_ninety((1, 2, 3))
+    def test_add_ninety_with_complex_number():
+        with pytest.raises(TypeError):
+            Number.add_ninety(3 + 4j)
+
+if __name__ == '__main__':
+    unittest.main()
